@@ -24,7 +24,8 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 
 GOAL:  
-to output a clean and tidy dataset into a file named:  tidy_file.txt
+to output a clean and tidy dataset into a file named:  
+tidy_file.txt (https://github.com/organx/Getting-and-Cleaning-Data-Course-Project/blob/master/tidy_file.txt)
 
 *'Tidy_file.txt' can be read into R with the command:*
 
