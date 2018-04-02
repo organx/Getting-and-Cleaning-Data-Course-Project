@@ -14,13 +14,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Johns Hopkins, Bloomberg School of Public Health
 
 
-###Subjects Performing Activities
+### Subjects Performing Activities
 Name: Subject
 
 There are 30 total subjects coded with numbers 1 to 30. Each subject performed a series of activities up to a maximum of 6 (six). A subject identification code list is not provided.
 
 
-###Activities Performed
+### Activities Performed
 Name: Activity
 
 There are 6 total activities that were to be performed by the subjects.
@@ -34,7 +34,7 @@ There are 6 total activities that were to be performed by the subjects.
 
 
 
-###MEASUREMENT VARIABLES^1^
+### MEASUREMENT VARIABLES^1^
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
@@ -49,7 +49,7 @@ The set of variables that were estimated from these signals are:
 * std: Standard deviation
 
 
-####Naming Convention
+#### Naming Convention
 The variable names of the measurements taken follow a pattern that describes the measurement.
 
 For example: tBodyAcc.mean...X
@@ -91,7 +91,7 @@ The separator was originally '()-'. Is easier for humans to read.
 ```
 
 
-  # | descriptor
+  no | descriptor
 -----|-----------
      | 
 1    | BodyAcc-XYZ
@@ -116,7 +116,7 @@ The separator was originally '()-'. Is easier for humans to read.
 
 
 
-####COMPLETE LIST OF VARIABLES^1^
+#### COMPLETE LIST OF VARIABLES^1^
 
 | variable name
 |-----
@@ -208,3 +208,5 @@ SOURCES AND METHODS
 2. R Documentation
 3. how to Solve R Markdown knit Closure is not subsettable, https://stackoverflow.com/questions/37943824/how-to-solve-r-markdown-knit-closure-is-not-subsettable
 4. Programmatically creating markdown tables in r with knitr, https://stackoverflow.com/questions/15488350/programmatically-creating-markdown-tables-in-r-with-knitr
+***
+:)
