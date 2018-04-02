@@ -30,7 +30,7 @@ to output a clean and tidy dataset into a file named:  tidy_file.txt
         data <- read.table(file_path, header = TRUE)
         (replace 'file_path' with your downloaded filename and path.)
 
-###Environment (brief)
+### Environment (brief)
 Using a tiny cheap laptop with Windows 10 proved to be exciting.
 
 It is a tiny Insignia laptop runing Windows 10. It is a great laptop. It is lovely and loveable. Unfortunately, I did not optimize it, the result: crashes, lags, and restarts.
@@ -41,7 +41,7 @@ Full environment information at the end*.
 
 
 
-###VARIABLE NAMES
+### VARIABLE NAMES
 Upon reading the information from the data project. It became very clear that they went through alot of trouble to name the variables in a very descriptive way. The names were left unchanged except for:
 
 * Replace '()-' with '...' if located in the middle, and
@@ -51,7 +51,7 @@ The intent is to make the data variables a bit more readable.
 
 
 
-###ASSIGNMENT STEPS
+### ASSIGNMENT STEPS
 The Assignment Specified 5 steps to take. In this script all of the required steps were done. In reality they were done out of order. Although they are called 'steps' in this case a more appropriate term would be 'constraint'. Still, for continuity, use of the term 'step' was continued.
 
 The steps(constraints) also overlap. To make it easier to follow they are outlined in the script with boxed headings. 
@@ -67,7 +67,7 @@ For Example:
 
 This step actually occurs further down in the script because it cannot occur first.
 
-####The actual order of the steps/constraints  
+#### The actual order of the steps/constraints  
 
 * Step #4: Appropriately label the data set with descriptive variable names.
 
@@ -81,10 +81,10 @@ This step actually occurs further down in the script because it cannot occur fir
 
 
 
-###OVERVIEW OF DATA BINDING  
+### OVERVIEW OF DATA BINDING  
 The data was cleaned and labeled before being bound together and processed. Care was taken to maintain and verify dimensions and headings. Care was taken to prevent reordering the data until it was all bound together. In this case, it had to be done in specific ordered steps.
 
-####SUMMARY OF ACTUAL BINDING STEPS
+#### SUMMARY OF ACTUAL BINDING STEPS
 1. The top (xtest) is created by putting together 4 datasets
     + Make a block by putting together 'xtest', and 'features'.
     + Add 'ytest' to the left. Give it the heading 'Activity'.
@@ -139,11 +139,11 @@ The data was cleaned and labeled before being bound together and processed. Care
 
 ```
 
-###ENVIRONMENT INFORMATION
+### ENVIRONMENT INFORMATION
 
 BTW. I love my little computer. I look forward to optimizing it for small R projects in the future.
 
-####Machine
+#### Machine
 
 * Processor: Intel(R) Atom(TM) x5 z8350 CPU @ 1.445GHz
 * Memory: 2.00 GB
@@ -151,7 +151,7 @@ BTW. I love my little computer. I look forward to optimizing it for small R proj
 * Operating System: Windows 10 Home
 
 
-####Softwares
+#### Softwares
 * R: Version 3.4.3 (Windows)
 
 * RStudio: Version 1.1.423 - (c) 2009-2008 RStudio,Inc.
@@ -173,7 +173,7 @@ MASKS (Upon loading dplyr)
     
     
 
-####WARNINGS(dplyr)
+#### WARNINGS(dplyr)
 Warning message:
 package 'bindrcpp' was built under R version 3.4.4 
 
@@ -186,8 +186,8 @@ Also the computer was in power saving mode. The result, processing power and mem
 
 
 
-
-###SOURCES AND METHODS
+***
+### SOURCES AND METHODS
 * "Optimizing code while writing code is the root of all evil."--R. Peng
 
 * Human Activity Recognition Using Smartphones, http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphonesc
@@ -210,3 +210,4 @@ https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assign
 
 
 ***
+:)
