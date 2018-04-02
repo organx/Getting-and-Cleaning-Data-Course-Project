@@ -12,46 +12,12 @@
 # Raw data was obtained from a study that had 30 different participants (subjects) 
 # wear a Galaxy brand smartphone on their waist while they performed 6 different activities.
 # The data was collected and put into a datasets.
-
+#
 # Goal is to output a clean and tidy dataset into a file named: tidy_file.txt
 #
 # Please Note: 
 # All of the steps were done. They were done out of order and overlap.
 # They are outlined below with boxed headings.
-#
-# Visual Overview of the Desired Merged Table Construction
-#
-# 
-#        --------------------
-#        |   features       |
-#----------------------------
-#| S |   |                  |
-#| u |   |                  |
-#| b |   |                  |
-#| j |   |                  |
-#| e | Y |                  |
-#| c |   |                  |
-#| t | T |    X Test        |
-#|   | e |                  |
-#| T | s |                  |
-#| e | t |                  |
-#| s |   |                  |
-#| t |   |                  |
-#|---------------------------
-#| S |   |                  |
-#| u |   |                  |
-#| b |   |                  |
-#| j |   |                  |
-#| e | Y |                  |
-#| c |   |                  |
-#| t | T |   X Train        |
-#|   | r |                  |
-#| T | a |                  |
-#| r | i |                  |
-#| a | n |                  |
-#| i |   |                  |
-#| n |   |                  |
-#|---------------------------
 #
 #Summary:
 # The top (xtest) is created by putting together 4 datasets:
