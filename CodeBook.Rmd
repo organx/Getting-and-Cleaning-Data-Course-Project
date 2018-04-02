@@ -1,0 +1,210 @@
+---
+title: "CodeBook.md"
+author: "Ted Herring"
+date: "March 27, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Class Project
+### Coursera, Getting and Cleaning Data, Week 4
+### Johns Hopkins, Bloomberg School of Public Health
+
+
+###Subjects Performing Activities
+Name: Subject
+
+There are 30 total subjects coded with numbers 1 to 30. Each subject performed a series of activities up to a maximum of 6 (six). A subject identification code list is not provided.
+
+
+###Activities Performed
+Name: Activity
+
+There are 6 total activities that were to be performed by the subjects.
+
+        1 WALKING
+        2 WALKING_UPSTAIRS
+        3 WALKING_DOWNSTAIRS
+        4 SITTING
+        5 STANDING
+        6 LAYING
+
+
+
+###MEASUREMENT VARIABLES^1^
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+The set of variables that were estimated from these signals are: 
+* mean: Mean value
+* std: Standard deviation
+
+
+####Naming Convention
+The variable names of the measurements taken follow a pattern that describes the measurement.
+
+For example: tBodyAcc.mean...X
+
+```{r eval = FALSE}
+{ <x><descriptor><sep><axis> }
+
+```
+
+
+```{r eval = FALSE}
+<x> 
+
+```
+* t - time
+* f - frequency
+
+
+```{r eval = FALSE}
+<sep>
+
+```
+* ...  if axis is specified
+* ..   if axis is unspecified
+The separator was originally '()-'. Is easier for humans to read.
+
+```{r eval = FALSE}
+<axis>
+
+```
+
+* x: x-axis
+* y: y-axis
+* z: z-axis
+
+```{r eval = FALSE}
+<descriptor>
+
+```
+
+
+  # | descriptor
+-----|-----------
+     | 
+1    | BodyAcc-XYZ
+2    | GravityAcc-XYZ
+3    | BodyAccJerk-XYZ
+4    | BodyGyro-XYZ
+5 | BodyGyroJerk-XYZ
+6 |BodyAccMag
+7 |GravityAccMag
+8 |BodyAccJerkMag
+9 |BodyGyroMag
+10 |BodyGyroJerkMag
+11 |BodyAcc-XYZ
+12 |BodyAccJerk-XYZ
+13 |BodyGyro-XYZ
+14 |BodyAccMag
+15 |BodyAccJerkMag
+16 |BodyGyroMag
+17 |BodyGyroJerkMag
+
+
+
+
+
+####COMPLETE LIST OF VARIABLES^1^
+
+| variable name
+|-----
+|tBodyAcc.mean...X
+|tBodyAcc.mean...Y
+|tBodyAcc.mean...Z
+|tBodyAcc.std...X
+|tBodyAcc.std...Y
+|tBodyAcc.std...Z
+|tGravityAcc.mean...X
+|tGravityAcc.mean...Y
+|tGravityAcc.mean...Z
+|tGravityAcc.std...X
+|tGravityAcc.std...Y
+|tGravityAcc.std...Z
+|tBodyAccJerk.mean...X
+|tBodyAccJerk.mean...Y
+|tBodyAccJerk.mean...Z
+|tBodyAccJerk.std...X
+|tBodyAccJerk.std...Y
+|tBodyAccJerk.std...Z
+|tBodyGyro.mean...X
+|tBodyGyro.mean...Y
+|tBodyGyro.mean...Z
+|tBodyGyro.std...X
+|tBodyGyro.std...Y
+|tBodyGyro.std...Z
+|tBodyGyroJerk.mean...X
+|tBodyGyroJerk.mean...Y
+|tBodyGyroJerk.mean...Z
+|tBodyGyroJerk.std...X
+|tBodyGyroJerk.std...Y
+|tBodyGyroJerk.std...Z
+|tBodyAccMag.mean..
+|tBodyAccMag.std..
+|tGravityAccMag.mean..
+|tGravityAccMag.std..
+|tBodyAccJerkMag.mean..
+|tBodyAccJerkMag.std..
+|tBodyGyroMag.mean..
+|tBodyGyroMag.std..
+|tBodyGyroJerkMag.mean..
+|tBodyGyroJerkMag.std..
+|fBodyAcc.mean...X
+|fBodyAcc.mean...Y
+|fBodyAcc.mean...Z
+|fBodyAcc.std...X
+|fBodyAcc.std...Y
+|fBodyAcc.std...Z
+|fBodyAcc.meanFreq...X
+|fBodyAcc.meanFreq...Y
+|fBodyAcc.meanFreq...Z
+|fBodyAccJerk.mean...X
+|fBodyAccJerk.mean...Y
+|fBodyAccJerk.mean...Z
+|fBodyAccJerk.std...X
+|fBodyAccJerk.std...Y
+|fBodyAccJerk.std...Z
+|fBodyAccJerk.meanFreq...X
+|fBodyAccJerk.meanFreq...Y
+|fBodyAccJerk.meanFreq...Z
+|fBodyGyro.mean...X
+|fBodyGyro.mean...Y
+|fBodyGyro.mean...Z
+|fBodyGyro.std...X
+|fBodyGyro.std...Y
+|fBodyGyro.std...Z
+|fBodyGyro.meanFreq...X
+|fBodyGyro.meanFreq...Y
+|fBodyGyro.meanFreq...Z
+|fBodyAccMag.mean..
+|fBodyAccMag.std..
+|fBodyAccMag.meanFreq..
+|fBodyBodyAccJerkMag.mean..
+|fBodyBodyAccJerkMag.std..
+|fBodyBodyAccJerkMag.meanFreq..
+|fBodyBodyGyroMag.mean..
+|fBodyBodyGyroMag.std..
+|fBodyBodyGyroMag.meanFreq..
+|fBodyBodyGyroJerkMag.mean..
+|fBodyBodyGyroJerkMag.std..
+|fBodyBodyGyroJerkMag.meanFreq..
+
+
+***
+SOURCES AND METHODS
+
+1. features_info.txt
+2. R Documentation
+3. how to Solve R Markdown knit Closure is not subsettable, https://stackoverflow.com/questions/37943824/how-to-solve-r-markdown-knit-closure-is-not-subsettable
+4. Programmatically creating markdown tables in r with knitr, https://stackoverflow.com/questions/15488350/programmatically-creating-markdown-tables-in-r-with-knitr
