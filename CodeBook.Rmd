@@ -56,8 +56,10 @@ For example: tBodyAcc.mean...X
 
 ```{r eval = FALSE}
 { <x><descriptor><sep><axis> }
+# <t><BodyAcc.mean><...><X>
 
 ```
+Meaning: Time Measurement of Body Acceleration Mean in the X axis
 
 
 ```{r eval = FALSE}
