@@ -92,8 +92,7 @@ The separator was originally '()-'. Is easier for humans to read.
 
 
   no | descriptor
------|-----------
-     | 
+-----|-----------     | 
 1    | BodyAcc-XYZ
 2    | GravityAcc-XYZ
 3    | BodyAccJerk-XYZ
