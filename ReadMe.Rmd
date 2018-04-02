@@ -1,0 +1,212 @@
+---
+title: "ReadMe.md"
+author: "Ted Herring"
+date: "March 27, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Class Project
+### Coursera, Getting and Cleaning Data, Week 4
+### Johns Hopkins, Bloomberg School of Public Health
+
+> "Optimizing before writing code is the root of all evil" -- R. Peng
+
+### INTRODUCTION
+Raw data was obtained from a study that had 30 different participants (subjects) while wearing a Galaxy brand smartphone on their waist. They performed 6 different activities. The data was collected and put into a data set.
+
+Data source: 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+
+
+GOAL:  
+to output a clean and tidy dataset into a file named:  tidy_file.txt
+```{r eval = FALSE}
+        data <- read.table(file_path, header = TRUE)
+```
+*'Tidy_file.txt' can be read into R with the command.*
+
+###Environment* (brief)
+Using a tiny cheap laptop with Windows 10 proved to be exciting.
+
+It is a tiny Insignia laptop runing Windows 10. It is a great laptop. It is lovely and loveable. Unfortunately, I did not optimize it, the result: crashes, lags, and restarts.
+
+Frequent saves and defensive/redundant programming occurred. Please forgive this student's rudamentary code.
+
+Full environment information at the end*.
+
+
+
+###VARIABLE NAMES
+Upon reading the information from the data project. It became very clear that they went through alot of trouble to name the variables in a very descriptive way. The names were left unchanged except for:
+
+* Replace '()-' with '...' if located in the middle, and
+* Replace '()-' with '..' if it occurs at the end of the name.
+
+The intent is to make the data variables a bit more readable.
+
+
+
+###ASSIGNMENT 'STEPS'
+The Assignment Specified 5 steps to take. In this script all of the required steps were done. In reality they were done out of order. Although they are called 'steps' in this case a more appropriate term would be 'constraint'. Still, for continuity, use of the term 'step' was continued.
+
+The steps(constraints) also overlap. To make it easier to follow they are outlined in the script with boxed headings. 
+ 
+For Example:  
+```{r eval = FALSE}
+#############################################################
+# Step 1: 
+# Merges the training and the test sets to create one data set.
+############################################################
+```
+
+
+This step actually occurs further down in the script because it cannot occur first.
+
+####The actual order of the steps/constraints  
+
+* Step #4: Appropriately label the data set with descriptive variable names.
+
+* Step #2: Extracts only the measurements on the mean and standard deviation for each measurement.
+ 
+* Step 1: Merges the training and the test sets to create one data set.
+
+* Step #3 Uses descriptive activity names to name the activities in the data set
+
+* Step #5: From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject. In short: group and summarize 'tidyset' using dplyr.
+
+
+
+###OVERVIEW OF DATA BINDING  
+The data was cleaned and labeled before being bound together and processed. Care was taken to maintain and verify dimensions and headings. Care was taken to prevent reordering the data until it was all bound together. In this case, it had to be done in specific ordered steps.
+
+####SUMMARY OF ACTUAL BINDING STEPS
+1. The top (xtest) is created by putting together 4 datasets
+    + Make a block by putting together 'xtest', and 'features'.
+    + Add 'ytest' to the left. Give it the heading 'Activity'.
+    + Add 'subjecttest' to the left. Give it the heading "Subject"
+
+2. The bottom part (xtrain) is created by putting together 4 datasets.
+    + Make another block by putting together 'xtrain' and 'features'
+    + Add 'ytrain' to the left. Give it the heading 'Activity'
+    + Add 'subjecttest' to the left. Give it the heading 'Activity'
+       
+3. When this is done, the bottom will be bound to the top using rbind.
+
+4. The resultant data frame will be copied and have the activity labels changed from numbers to words.
+
+5. The resultant data frame will then copied and processed using the dplyr package. 
+
+6. Finally, the tidy dataset is written to file: tidy_file.txt
+
+*Visual Overview of the Desired Merged Table Layout*
+```{r eval = FALSE}
+# 
+#        --------------------
+#        |   features       |
+#----------------------------
+#| S |   |                  |
+#| u |   |                  |
+#| b |   |                  |
+#| j |   |                  |
+#| e | Y |                  |
+#| c |   |                  |
+#| t | T |    X Test        |
+#|   | e |                  |
+#| T | s |                  |
+#| e | t |                  |
+#| s |   |                  |
+#| t |   |                  |
+#|---------------------------
+#| S |   |                  |
+#| u |   |                  |
+#| b |   |                  |
+#| j |   |                  |
+#| e | Y |                  |
+#| c |   |                  |
+#| t | T |   X Train        |
+#|   | r |                  |
+#| T | a |                  |
+#| r | i |                  |
+#| a | n |                  |
+#| i |   |                  |
+#| n |   |                  |
+#|---------------------------
+
+```
+
+###ENVIRONMENT INFORMATION*
+
+BTW. I love my little computer. I look forward to optimizing it for small R projects in the future.
+
+####Machine
+
+* Processor: Intel(R) Atom(TM) x5 z8350 CPU @ 1.445GHz
+* Memory: 2.00 GB
+* System: 32-bit Operating System, x64-based processor
+* Operating System: Windows 10 Home
+
+
+####Softwares
+* R: Version 3.4.3 (Windows)
+
+* RStudio: Version 1.1.423 - (c) 2009-2008 RStudio,Inc.
+
+* R Packages used
+    + dplyr 0.7.4 -- Maintained by: Hadley Wickam <hadley@rstudio.com>
+
+    + dplyr Dependencies: assertthat, bindrcpp (>= 0.2), glue (>= 1.1.1), magrittr, methods, pkgconfig, rlang (>= 0.1.2), R6, Rcpp (>= 0.12.7), tibble (>= 1.3.1), utils
+
+
+
+MASKS (Upon loading dplyr)
+
+* The following objects are masked from 'package:stats': 
+        filter, lag
+
+* The following objects are masked from 'package:base':
+        intersect, setdiff, setequal, union
+    
+    
+
+####WARNINGS(dplyr)
+Warning message:
+package 'bindrcpp' was built under R version 3.4.4 
+
+Operating System Bloat
+Crashes were frequent. I wasn't the fault of the laptop or the OS. I just did not take the time to optimize the system before starting the project.
+
+The operating system threatened to update every 30 minutes while eating upwards of 1.9GB memory. Having a browser open and RStudio and running operations taxed the processor and memory upwards of 99%.
+
+Also the computer was in power saving mode. The result, processing power and memory were even lower.
+
+
+
+
+###SOURCES AND METHODS
+* "Optimizing code while writing code is the root of all evil."--R. Peng
+
+* Human Activity Recognition Using Smartphones, http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphonesc
+
+* Swirl Excercises: Summarize1.R, summarize2,R, summarize3.R, summarize4.R
+
+* Getting and Cleaning Data: The Assignment, by The Thoughtful Bloke
+https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/
+
+* TidyData, by Hadley Wickham
+
+* Recode Data in R, http://rprogramming.net/recode-data-in-r/
+        
+* More information on factors, http://faculty.nps.edu/sebuttre/home/R/factors.html
+
+* dplyr Windows Functions with order_by and with_order, https://stackoverflow.com/questions/28537437/dplyr-window-functions-with-order-by-and-with-order?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa, gave insight in using 'with_order'.
+
+* Group by multiple columns in dplyr using string vector input, https://stackoverflow.com/questions/21208801/group-by-multiple-columns-in-dplyr-using-string-vector-input?rq=1
+
+
+
+***
